@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.96"
-binrw = "0.14"
+binrw = "0.15.1"
 bytemuck = "1.21.0"
 image = "0.25.5"
 shroom-crypto = { version = "0.1.0", path = "../shroom-crypto" }
