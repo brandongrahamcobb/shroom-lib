@@ -114,7 +114,7 @@ impl Sound {
     }
 }
 
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(untagged)]
 pub enum Value {
     Bool(bool),
