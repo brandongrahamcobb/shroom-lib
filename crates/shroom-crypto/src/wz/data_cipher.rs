@@ -42,7 +42,7 @@ impl<const N: usize> IvSizeUser for WzDataCipher<N> {
 impl<const N: usize> KeyIvInit for WzDataCipher<N> {
     fn new(key: &GenericArray<u8, Self::KeySize>, iv: &GenericArray<u8, Self::IvSize>) -> Self {
         let aes = Aes256::new(key);
-        let mut cache_ofb = Aes256Ofb::from_core(ofb::OfbCore::inner_iv_init(&aes, iv));
+        let mut cache_ofb = Aes256Ofb::from_core(ofb::OfbCore::inner_iv_init(&aes.clone(), iv));
         let cached_key = Self::calc_cache_key(&mut cache_ofb);
         let iv = cache_ofb.get_core().iv_state();
 
